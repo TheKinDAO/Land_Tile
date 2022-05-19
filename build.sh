@@ -50,7 +50,8 @@ near deploy --accountId $accountId
 near call --accountId $accountId $accountId new_default_meta '{"owner_id":"'$accountId'", "treasury_id":"'$master'"}'
 
 # NFT create series
-near call --accountId $accountId $accountId nft_create_series '{"token_series_id":"test1", "creator_id":"'$accountId'","token_metadata":{"title":"3810 Thomas Rd, Miranda, CA 95553","media":"bafybeidzcan4nzcz7sczs4yzyxly4galgygnbjewipj6haco4kffoqpkiy", "reference":"bafybeicg4ss7qh5odijfn2eogizuxkrdh3zlv4eftcmgnljwu7dm64uwji", "copies": 152283},"price":"1000000000000000000000000"}' --depositYocto 8540000000000000000000
+# https://github.com/TheKinDAO/Land_Tile/blob/main/image/Miranda.png
+near call --accountId $accountId $accountId nft_create_series '{"token_series_id":"test1", "creator_id":"'$accountId'","token_metadata":{"title":"3810 Thomas Rd, Miranda, CA 95553","media":"https://github.com/TheKinDAO/Land_Tile/blob/main/image/Miranda.png", "media_hash":"", "copies": 152283},"price":"1000000000000000000000000"}' --depositYocto 8540000000000000000000
 
 # NFT create series with royalty
 near call --accountId $accountId $accountId nft_create_series '{"token_series_id":"1","creator_id":"alice.test.near","token_metadata":{"title":"Naruto Shippuden ch.2: Menolong sasuke","media":"bafybeidzcan4nzcz7sczs4yzyxly4galgygnbjewipj6haco4kffoqpkiy", "reference":"bafybeicg4ss7qh5odijfn2eogizuxkrdh3zlv4eftcmgnljwu7dm64uwji", "copies": 100},"price":"1000000000000000000000000", "royalty":{"alice.test.near": 1000}}' --depositYocto 8540000000000000000000
