@@ -24,7 +24,7 @@ case "$1" in
             row_dir="tile/row_${row}"
             [[ -d $row_dir ]] || mkdir $row_dir
             for ((X=0, xend=xstep-1; xend < 817; X+=xstep, xend+=xstep)); do
-                pixel=$(printf "%02dx%02d" $((X/ystep)) $((Y/ystep)))
+                pixel=$(printf "%02dx%02d" $((X/xstep)) $((Y/ystep)))
                 output="${row_dir}/${pixel}.png"
                 echo $output
                 [[ -f $output ]] || gm convert "$1".mpc -crop "${xstep}x${ystep}+${X}+${Y}" $output
